@@ -1,10 +1,13 @@
 const std = @import("std");
+const stdout = std.io.getStdOut().writer();
+const rnd = std.rand.DefaultPrng.init(std.time.milliTimestamp());
 
 pub fn main() !void {
-    // const stdin = std.io.getStdIn().reader();
-    const stdout = std.io.getStdOut().writer();
+    const n: u16 = 100;
 
-    try stdin.readUntilDelimiter
+    try stdout.print("{u}\n", .{n});
+}
 
-    try stdout.print("Hello World\n", .{});
+fn monty_hall(n: u32) bool {
+    _ = n;
 }
