@@ -16,6 +16,7 @@
         name = "zig-devel";
         packages = with pkgs; [
           zig
+          zls
         ];
         shellHook = ''export PS1="[\u@zig:\W]\$ "'';
       };
