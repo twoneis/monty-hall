@@ -1,5 +1,5 @@
 {
-  description = "A flake for development with zig.";
+  description = "A flake for development with rust.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -13,12 +13,15 @@
       };
     in {
       devShell.x86_64-linux = pkgs.mkShell {
-        name = "zig-devel";
+        name = "rust-devel";
         packages = with pkgs; [
-          zig
-          zls
+          rust-analyzer
+          rustup
         ];
-        shellHook = ''export PS1="[\u@zig:\W]\$ "'';
+        shellHook = ''
+          export PS1="[\u@monty-hall:\W]\$ "
+          rustup default stable
+        '';
       };
     };
 }
